@@ -3,16 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <title>Kim Heng | Portfolio</title>
     <style>
       body {
         font-family: 'Inter', sans-serif;
       }
+      .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-image {
+            display: none; 
+            transition: opacity 0.7s ease-in-out;
+            opacity: 0;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .slider-image.active {
+            display: block; 
+            opacity: 1;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .slider-image.active {
+            animation: fadeIn 0.7s ease-in-out;
+        }
     </style>
 </head>
 <body class="bg-sky-100 text-gray-300">
@@ -66,11 +90,11 @@
                 </div>
             </div>
 
-            <div class="flex items-center justify-around text-4xl text-white bg-zinc-900 p-2 rounded-2xl">
-                <span><i class='bx bxl-instagram cursor-pointer hover:text-[#E4405F] transition-all duration-300'></i></span>
-                <span><i class='bx bxl-facebook-circle cursor-pointer hover:text-[#FF00FF] transition-all duration-300'></i></span>
-                <span><i class='bx bxl-telegram cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
-                <span><i class='bx bxl-twitter cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
+            <div class="flex items-center justify-around text-4xl text-white bg-zinc-900 p-3 rounded-3xl">
+                <span><i class='bxl  bx-facebook-circle cursor-pointer hover:text-[#E4405F] transition-all duration-300'></i></span>
+                <span><i class='bxl  bx-instagram cursor-pointer hover:text-[#FF00FF] transition-all duration-300'></i></span>
+                <span><i class='bxl  bx-telegram cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
+                <span><i class='bxl  bx-twitter cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
             </div>
         </div>
 
@@ -119,7 +143,30 @@
                 <a href="#" class="text-xl text-gray-300 hover:text-white transition-all duration-500">Resume</a>
             </div>
             <p class="text-gray-300">Information technology (IT) is the broad use of computers, software, networks, and other hardware to create, store, process, retrieve, transmit, and manipulate data and information, particularly within a business or organizational context. Key aspects include managing data, enabling communication, supporting business operations, and driving innovation through tools like cloud computing, cybersecurity, artificial intelligence (AI), and data analytics. IT is crucial for modern businesses, allowing them to improve efficiency, decision-making, customer support, and market access, and has become a vital part of daily life.</p>
+            <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
+        <h2 class="text-3xl font-bold text-center p-6 text-gray-800">
+            Image :)
+        </h2>
+        <div class="relative slider-container">
+            <img src="pic.jpg" alt="data" class="slider-image rounded-md">
+            <img src="smile.jpg" alt="data" class="slider-image rounded-md">
+            <img src="face.jpg" alt="data" class="slider-image rounded-md">
+            <img src="kimheng.jpg" alt="data" class="slider-image rounded-md">
+            
+            <button id="prevBtn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button id="nextBtn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 text-white p-3 rounded-full shadow-lg hover:bg-gray-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
         </div>
+    </div>
+    </div>
     </div>
     <script>
         const menuToggle = document.getElementById('menu-toggle');
@@ -133,6 +180,40 @@
         menuClose.addEventListener('click', () => {
             mobileMenu.classList.add('-translate-x-full');
         });
+
+        window.onload = function() {
+            const sliderImages = document.querySelectorAll('.slider-image');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            let currentSlide = 0;
+            function showSlide(index) {
+                if (index >= sliderImages.length) {
+                    currentSlide = 0;
+                } else if (index < 0) {
+                    currentSlide = sliderImages.length - 1;
+                } else {
+                    currentSlide = index;
+                }
+                
+                sliderImages.forEach(image => {
+                    image.classList.remove('active');
+                });
+                sliderImages[currentSlide].classList.add('active');
+            }
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            
+            showSlide(currentSlide);
+            setInterval(nextSlide, 3000);
+        };
     </script>
 </body>
 </html>
