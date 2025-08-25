@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <title>Kim Heng | Portfolio</title>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-sky-100 text-gray-300">
+    <div class="md:grid md:grid-cols-12 md:grid-flow-dense md:h-screen p-6">
+        
+        <nav class="flex items-center justify-between bg-orange-600 text-white p-3.5 rounded-2xl mb-6 md:col-span-12">
+            <a href="#" class="text-gray-300">kim <span class="font-semibold text-white">heng</span></a>
+
+            <div class="hidden md:flex md:gap-x-8 text-sm">
+                <a href="#" class="hover:text-white transition-colors duration-200">Home</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">About</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Projects</a>
+                <a href="#" class="hover:text-white transition-colors duration-200">Contact</a>
+            </div>
+
+            
+            <div class="text-xl md:hidden" id="menu-toggle">
+                <i class='bx bx-menu-wider cursor-pointer' style="color: white;"></i> 
+            </div>
+        </nav>
+
+        
+        <div id="mobile-menu" class="fixed top-0 left-0 h-full w-2/3 bg-sky-700 z-50 transform -translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex items-center justify-between p-6">
+                <a href="#" class="text-gray-300">kim <span class="font-semibold text-white">heng</span></a>
+                <div class="text-xl text-white" id="menu-close">
+                    <i class='bx bx-x cursor-pointer'></i>
+                </div>
+            </div>
+            <div class="flex flex-col gap-y-4 p-6 text-white text-lg font-medium">
+                <a href="#" class="hover:text-gray-300 transition-colors duration-200">Home</a>
+                <a href="#" class="hover:text-gray-300 transition-colors duration-200">About</a>
+                <a href="#" class="hover:text-gray-300 transition-colors duration-200">Projects</a>
+                <a href="#" class="hover:text-gray-300 transition-colors duration-200">Contact</a>
+            </div>
+        </div>
+
+        <div class="mb-6 md:mb-0 md:pl-0 md:col-span-4 lg:col-span-3 h-96 md:h-auto">
+            <img src="kimheng.jpg" alt="Kim Heng" class="w-full h-full object-cover rounded-3xl">
+        </div>
+
+        <div class="flex flex-col gap-y-6 px-0 md:col-span-8 md:pl-6 md:pb-0 lg:col-span-9">
+            <div class="flex flex-col md:flex-row gap-4 text-white">
+                <div class="flex items-center justify-between bg-zinc-900 p-3.5 flex-1 rounded-2xl">
+                    <p class="text-sm text-gray-300">Name :</p>
+                    <p>Kim heng</p>
+                </div>
+                <div class="flex items-center justify-between bg-zinc-900 p-3.5 flex-1 rounded-2xl">
+                    <p class="text-sm text-gray-300">Base in :</p>
+                    <p>Florida</p>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-around text-4xl text-white bg-zinc-900 p-2 rounded-2xl">
+                <span><i class='bx bxl-instagram cursor-pointer hover:text-[#E4405F] transition-all duration-300'></i></span>
+                <span><i class='bx bxl-facebook-circle cursor-pointer hover:text-[#FF00FF] transition-all duration-300'></i></span>
+                <span><i class='bx bxl-telegram cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
+                <span><i class='bx bxl-twitter cursor-pointer hover:text-[#00FFFF] transition-all duration-300'></i></span>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-y-4 bg-zinc-900 p-3.5 rounded-2xl mt-6 md:col-span-12 md:flex-row md:gap-x-8 md:justify-between md:items-center">
+            <p class="text-white text-xl font-bold text-center leading-10 md:text-left">Bring Your Ideas To Life Through Frontend Design</p>
+            <button class="bg-sky-600 p-2 text-white font-semibold rounded-xl hover:bg-sky-500 transition-all duration-300 w-full md:w-auto md:flex-1">Hire Now</button>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-2 md:col-span-12">
+            <div class="flex flex-col items-center justify-center flex-1 p-4 text-center bg-emerald-500 text-white rounded-2xl">
+                <span class="text-4xl font-bold mb-2">2+</span>
+                <span class="text-sm">Years of Experience</span>
+            </div>
+            <div class="flex flex-col items-center justify-center flex-1 p-4 text-center bg-pink-600 text-white rounded-2xl">
+                <span class="text-4xl font-bold mb-2">5+</span>
+                <span class="text-sm">Projects Completed</span>
+            </div>
+            <div class="flex flex-col items-center justify-center flex-1 p-4 text-center bg-sky-400 text-white rounded-2xl">
+                <span class="text-4xl font-bold mb-2">4+</span>
+                <span class="text-sm">Happy Clients</span>
+            </div>
+        </div>
+        
+        <div class="mt-6 flex flex-col gap-y-6 bg-zinc-900 p-3.5 rounded-2xl md:col-span-6 lg:col-span-4">
+            <div class="flex items-center justify-between ">
+                <h3 class="text-xl font-semibold text-white">My Profiles</h3>
+                <a href="#" class="text-xl text-gray-300 hover:text-white transition-all duration-300">See All</a>
+            </div>
+            <div class="group relative aspect-square">
+                <img src="pic.jpg" alt="Project 1" class="rounded-2xl object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-40 w-full h-full">
+                <a href="#" class="absolute inset-0 flex items-center justify-center font-semibold text-white hidden group-hover:flex">See More</a>
+            </div>
+            <div class="group relative aspect-square">
+                <img src="smile.jpg" alt="Project 2" class="rounded-2xl object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-40 w-full h-full">
+                <a href="#" class="absolute inset-0 flex items-center justify-center font-semibold text-white hidden group-hover:flex">See More</a>
+            </div>
+            <div class="group relative aspect-square">
+                <img src="face.jpg" alt="Project 3" class="rounded-2xl object-cover opacity-100 transition-opacity duration-300 group-hover:opacity-40 w-full h-full">
+                <a href="#" class="absolute inset-0 flex items-center justify-center font-semibold text-white hidden group-hover:flex">See More</a>
+            </div>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-y-4 bg-sky-900 p-3.5 rounded-2xl md:col-span-6 lg:col-span-8">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold text-white">About</h3>
+                <a href="#" class="text-xl text-gray-300 hover:text-white transition-all duration-500">Resume</a>
+            </div>
+            <p class="text-gray-300">Information technology (IT) is the broad use of computers, software, networks, and other hardware to create, store, process, retrieve, transmit, and manipulate data and information, particularly within a business or organizational context. Key aspects include managing data, enabling communication, supporting business operations, and driving innovation through tools like cloud computing, cybersecurity, artificial intelligence (AI), and data analytics. IT is crucial for modern businesses, allowing them to improve efficiency, decision-making, customer support, and market access, and has become a vital part of daily life.</p>
+        </div>
+    </div>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('-translate-x-full');
+        });
+
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('-translate-x-full');
+        });
+    </script>
+</body>
+</html>
